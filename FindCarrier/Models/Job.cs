@@ -8,8 +8,7 @@ namespace FindCarrier.Models
 {
     public class Job
     {
-        [Key]
-        public int JobId { get; set; }
+        public int Id { get; set; }
         public string JobName { get; set; }
     }
 }
