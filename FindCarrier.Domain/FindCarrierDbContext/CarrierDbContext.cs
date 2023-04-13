@@ -1,4 +1,4 @@
-﻿using FindCarrier.Models;
+﻿using FindCarrier.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -14,7 +14,7 @@ namespace FindCarrier.Domain
 
         }
 
-        public DbSet<Job> Jobs { get; set; }
-        public DbSet<University> Universities { get; set; }
+        public virtual DbSet<Job> Job { get; set; }
+        public virtual DbSet<University> University { get; set; }
     }
 }

@@ -3,7 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31105.61
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindCarrier", "FindCarrier\FindCarrier.csproj", "{4130D221-DD99-4309-8B4C-98D22A3E39F9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FindCarrier", "FindCarrier\FindCarrier.csproj", "{4130D221-DD99-4309-8B4C-98D22A3E39F9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindCarrier.Domain", "FindCarrier.Domain\FindCarrier.Domain.csproj", "{23D896F2-5094-4555-9C5A-4333AD90B45A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindCarrier.Models", "FindCarrier.Models\FindCarrier.Models.csproj", "{171BD50D-C5E9-4BB4-B81B-584C27306B0E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindCarrier.Services", "FindCarrier.Services\FindCarrier.Services.csproj", "{1AC77CA3-DA13-43D3-86FE-3C7DB2791A30}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindCarrier.Repositories", "FindCarrier.Repositories\FindCarrier.Repositories.csproj", "{1D5B54C1-17B8-4D9D-BB44-2C1734FADBFD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +23,22 @@ Global
 		{4130D221-DD99-4309-8B4C-98D22A3E39F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4130D221-DD99-4309-8B4C-98D22A3E39F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4130D221-DD99-4309-8B4C-98D22A3E39F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23D896F2-5094-4555-9C5A-4333AD90B45A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23D896F2-5094-4555-9C5A-4333AD90B45A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23D896F2-5094-4555-9C5A-4333AD90B45A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23D896F2-5094-4555-9C5A-4333AD90B45A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{171BD50D-C5E9-4BB4-B81B-584C27306B0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{171BD50D-C5E9-4BB4-B81B-584C27306B0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{171BD50D-C5E9-4BB4-B81B-584C27306B0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{171BD50D-C5E9-4BB4-B81B-584C27306B0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1AC77CA3-DA13-43D3-86FE-3C7DB2791A30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AC77CA3-DA13-43D3-86FE-3C7DB2791A30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AC77CA3-DA13-43D3-86FE-3C7DB2791A30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AC77CA3-DA13-43D3-86FE-3C7DB2791A30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D5B54C1-17B8-4D9D-BB44-2C1734FADBFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D5B54C1-17B8-4D9D-BB44-2C1734FADBFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D5B54C1-17B8-4D9D-BB44-2C1734FADBFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D5B54C1-17B8-4D9D-BB44-2C1734FADBFD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

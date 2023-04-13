@@ -13,6 +13,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using FindCarrier.Repositories.Repositories;
 
 namespace FindCarrier
 {
@@ -49,6 +50,8 @@ namespace FindCarrier
                     }
                 );
             });
+
+            services.AddTransient(typeof(IRepository<>), typeof(Repository<>));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

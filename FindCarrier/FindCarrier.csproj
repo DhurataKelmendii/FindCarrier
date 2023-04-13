@@ -5,13 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Migrations\20230412155619_JobTable.cs" />
-    <Compile Remove="Migrations\20230412155619_JobTable.Designer.cs" />
-    <Compile Remove="Migrations\20230412155948_test.cs" />
-    <Compile Remove="Migrations\20230412155948_test.Designer.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.13" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.13">
       <PrivateAssets>all</PrivateAssets>
@@ -23,7 +16,13 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FindCarrier.Models\FindCarrier.Models.csproj" />
+    <ProjectReference Include="..\FindCarrier.Services\FindCarrier.Services.csproj" />
   </ItemGroup>
 
 
