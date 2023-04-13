@@ -15,5 +15,6 @@ namespace FindCarrier.Domain
         }
 
         public DbSet<Job> Jobs { get; set; }
+        public DbSet<University> Universities { get; set; }
     }
 }

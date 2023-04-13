@@ -3,14 +3,16 @@ using FindCarrier.Domain;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace FindCarrier.Migrations
 {
     [DbContext(typeof(CarrierDbContext))]
-    partial class CarrierDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230413131947_UniverityTable")]
+    partial class UniverityTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
