@@ -16,5 +16,8 @@ namespace FindCarrier.Domain
 
         public virtual DbSet<Job> Job { get; set; }
         public virtual DbSet<University> University { get; set; }
+        public virtual DbSet<User> User { get; set; }
+        public virtual DbSet<ApplicationUser> ApplicationUser { get; set; }
+     
     }
 }

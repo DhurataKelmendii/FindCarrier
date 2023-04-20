@@ -12,5 +12,7 @@ namespace FindCarrier.Domain.FindCarrierDbContext
     {
         DbSet<Job> Job { get; set; }
         DbSet<University> Univerisity { get; set; }
+        DbSet<User> User { get; set; }
+        DbSet<ApplicationUser> ApplicationUser { get; set; }
     }
 }

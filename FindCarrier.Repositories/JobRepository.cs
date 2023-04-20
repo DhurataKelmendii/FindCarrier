@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace FindCarrier.Repositories
 {
-    public class JobRepository
+    public class JobRepository<T> : IJobRepository<T> where T : class
     {
         private readonly IRepository<Job> _jobRepository;
 

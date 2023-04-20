@@ -14,6 +14,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using FindCarrier.Repositories.Repositories;
+using FindCarrier.Repositories;
+using FindCarrier.Domain.Entities;
+using Microsoft.AspNetCore.Identity;
 
 namespace FindCarrier
 {
@@ -30,15 +33,15 @@ namespace FindCarrier
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "FindCarrier", Version = "v1" });
-            }); 
 
             services.AddDbContext<CarrierDbContext>(options =>
             {
                 options.UseSqlServer(Configuration.GetConnectionString("Database"));
+            });
+
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "FindCarrier", Version = "v1" });
             });
 
             services.AddCors(options =>
@@ -52,11 +55,23 @@ namespace FindCarrier
             });
 
             services.AddTransient(typeof(IRepository<>), typeof(Repository<>));
+            services.AddScoped(typeof(IJobRepository<>), typeof(JobRepository<>));
+
+            services.AddSwaggerGen();
+
+            services.AddControllers();
+            services.AddHttpContextAccessor();
+
+            services.AddIdentity<ApplicationUser, IdentityRole>()
+                    .AddEntityFrameworkStores<CarrierDbContext>()
+                    .AddDefaultTokenProviders();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseCors(options => options.WithOrigins("http://localhost:3000").AllowAnyMethod().AllowAnyHeader());
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -65,21 +80,17 @@ namespace FindCarrier
             }
 
             app.UseHttpsRedirection();
-            app.UseCors(_corsPolicy);
+            app.UseStaticFiles();
+            //app.UseCors(_corsPolicy);
 
             app.UseRouting();
 
             app.UseAuthorization();
 
-            //app.UseEndpoints(endpoints =>
-            //{
-            //    endpoints.MapControllers();
-
-            //});
-
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute("Default", "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapControllers();
+
             });
         }
     }
