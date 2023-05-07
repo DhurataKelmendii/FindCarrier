@@ -50,7 +50,6 @@ namespace FindCarrier
             //});
 
             services.AddTransient(typeof(IRepository<>), typeof(Repository<>));
-            services.AddScoped(typeof(IJobRepository<>), typeof(JobRepository<>));
 
             services.AddSwaggerGen();
 

@@ -4,14 +4,16 @@ using FindCarrier.Domain;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace FindCarrier.Domain.Migrations
 {
     [DbContext(typeof(CarrierDbContext))]
-    partial class CarrierDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230429174135_UniversityTable")]
+    partial class UniversityTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -107,6 +109,15 @@ namespace FindCarrier.Domain.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Degree")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Exam")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ExamPoints")
+                        .HasColumnType("int");
 
                     b.Property<string>("Field")
                         .HasColumnType("nvarchar(max)");

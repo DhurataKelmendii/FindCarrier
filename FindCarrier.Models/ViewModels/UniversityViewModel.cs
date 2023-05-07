@@ -1,15 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FindCarrier.Domain.Entities
+namespace FindCarrier.Models.ViewModels
 {
-    public class University
+    public class UniversityViewModel
     {
-        [Key]
         public int Id { get; set; }
         public string Name { get; set; }
         public string Place { get; set; }
@@ -17,5 +15,6 @@ namespace FindCarrier.Domain.Entities
         public string Location { get; set; }
         public string Field { get; set; }
         public string SchoolType { get; set; }
+        public List<UniversityViewModel> University { get; set; }
     }
 }
