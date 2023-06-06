@@ -2,6 +2,7 @@
 using FindCarrier.Models.ViewModels;
 using FindCarrier.Repositories.Repositories;
 using FindCarrier.Services.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,7 @@ using System.Threading.Tasks;
 
 namespace FindCarrier.Controllers
 {
+    [Authorize]
     public class UniversityController : ControllerBase
     {
         //dependency injection
@@ -26,7 +28,7 @@ namespace FindCarrier.Controllers
             var model = new UniversityViewModel();
             var result = (await uniService.GetAll()).Select(x => new UniversityViewModel
             {
-                Id = x.Id,
+                Id = x.Id, 
                 Name = x.Name,
                 Place = x.Place,
                 Field = x.Field,
