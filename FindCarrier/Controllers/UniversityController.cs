@@ -12,6 +12,8 @@ using System.Threading.Tasks;
 namespace FindCarrier.Controllers
 {
     [Authorize]
+    [Route("api/[controller]")]
+    [ApiController]
     public class UniversityController : ControllerBase
     {
         //dependency injection
@@ -23,12 +25,12 @@ namespace FindCarrier.Controllers
 
         [HttpGet]
         [Route("UniversitiesList")]
-        public async Task<ActionResult<IEnumerable<University>>> GetUniversities()
+        public async Task<ActionResult<IEnumerable<University>>> UniversitiesList()
         {
             var model = new UniversityViewModel();
             var result = (await uniService.GetAll()).Select(x => new UniversityViewModel
             {
-                Id = x.Id, 
+                Id = x.Id,
                 Name = x.Name,
                 Place = x.Place,
                 Field = x.Field,
@@ -41,9 +43,32 @@ namespace FindCarrier.Controllers
             return Ok(model);
         }
 
+        [HttpPost]
+        [Route("Search")]
+        public async Task<ActionResult<IEnumerable<University>>> Search(string searchPlace)
+        {
+            var model = new UniversityViewModel();
+            var universities = await uniService.GetAll();
+
+            var filteredUniversities = universities.Where(x => x.Place == searchPlace)
+                                                   .Select(x => new UniversityViewModel
+                                                   {
+                                                       Id = x.Id,
+                                                       Name = x.Name,
+                                                       Place = x.Place,
+                                                       Field = x.Field,
+                                                       SchoolType = x.SchoolType,
+                                                       Location = x.Location,
+                                                       IsDeleted = x.IsDeleted
+                                                   })
+                                                   .ToList();
+
+            model.University = filteredUniversities;
+            return Ok(model);
+        }
+
         [HttpGet("{id}")]
-        //[Route("GetById/{id}")]
-        public async Task<ActionResult<University>> GetUniversity(int id)
+        public async Task<ActionResult<University>> GetUniversity(int id)  
         {
             var uni = await uniService.GetById(id);
             if (uni == null)
@@ -52,35 +77,6 @@ namespace FindCarrier.Controllers
             }
             return uni;
         }
-
-        //[HttpPut("{id}")]
-        //public async Task<IActionResult> PutUniversity(int id, University uni)
-        //{
-        //    if (id != uni.Id)
-        //    {
-        //        return BadRequest();
-        //    }
-
-        //    _context.Entry(uni).State = EntityState.Modified;
-
-        //    try
-        //    {
-        //        await _context.SaveChangesAsync();
-        //    }
-        //    catch (DbUpdateConcurrencyException)
-        //    {
-        //        if (!UniversityExists(id))
-        //        {
-        //            return NotFound();
-        //        }
-        //        else
-        //        {
-        //            throw;
-        //        }
-        //    }
-
-        //    return NoContent();
-        //}
 
         [HttpPost]
         [Route("Create")]
