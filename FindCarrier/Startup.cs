@@ -106,7 +106,7 @@ namespace FindCarrier
                     Scheme = "Bearer",
                     BearerFormat = "JWT",
                     In = ParameterLocation.Header,
-                    Description = "Enter 'Bearer' [space] and then your valid token in the text input below.\r\n\r\nExample: \"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9\"",
+                    Description = "Enter 'Bearer' [space] and then your valid token in the text input below.\r\n\r\nExample: \"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiZGs0MjEwMkB1YnQtdW5pLm5ldCIsImp0aSI6ImJhODhjNzFlLWE4MDctNDAwNi1hYzNjLWM0MWFlNzg1ZWI0MSIsImV4cCI6MTY4NjI0OTM0NSwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo1MDAwIiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo0MjAwIn0.EUDdYA2agNPcTQnDDQJMsvJiYb61MeEHz48K7RP7kH4\"",
                 });
                 swagger.AddSecurityRequirement(new OpenApiSecurityRequirement
                 {

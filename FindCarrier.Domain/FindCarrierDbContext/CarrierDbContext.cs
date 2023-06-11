@@ -22,6 +22,8 @@ namespace FindCarrier.Domain
         public virtual DbSet<University> University { get; set; }
         public virtual DbSet<User> User { get; set; }
         public virtual DbSet<ApplicationUser> ApplicationUser { get; set; }
+        public virtual DbSet<Resume> Resume { get; set; }
+        public virtual DbSet<UniversityApplication> UniversityApplication { get; set; }
 
     }
 }
