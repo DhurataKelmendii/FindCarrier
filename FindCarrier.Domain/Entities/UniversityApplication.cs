@@ -14,5 +14,8 @@ namespace FindCarrier.Domain.Entities
         public Resume Resume { get; set; }
         public DateTime AppliedDate { get; set; }
         public bool IsDeleted { get; set; }
+        public string UniversityName { get; set; }
+        public string StudentName { get; set; }
+        public string ApplicationStatus { get; set; }
     }
 }

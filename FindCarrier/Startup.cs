@@ -20,6 +20,8 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using FindCarrier.Services.IServices;
+using FindCarrier.Services.Services;
 
 namespace FindCarrier
 {
@@ -53,6 +55,10 @@ namespace FindCarrier
             //});
 
             services.AddTransient(typeof(IRepository<>), typeof(Repository<>));
+
+            services.AddScoped<IApplicationService, ApplicationService>();
+            services.AddScoped<IExternalUniversityService, ExternalUniversityServiceAdapter>();
+            services.AddScoped<INotificationService, NotificationServiceAdapter>();
 
             services.AddSwaggerGen();
 
